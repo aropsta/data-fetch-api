@@ -1,10 +1,8 @@
 
-import { Product, jsonProducts } from '../interaces/Product'
-import Item from "./ProductItem";
+import Item from "./UserItem";
 import "../styles/productPage.scss"
 import React, { FormEvent, RefObject, useEffect, useRef, useState, useCallback } from "react";
-import { Outlet } from "react-router";
-import { useParams } from 'react-router';
+import {UserItem} from "../interaces/User";
 
 
 export default function ProductGallary() {
@@ -12,7 +10,7 @@ export default function ProductGallary() {
   //const [dataType, setDataType]= useState("products")
 
   //JSON Item and setter function
-  const [items, setItems] = useState<Product[]>([]);
+  const [items, setItems] = useState<UserItem[]>([]);
   
   //
   const [error, setError] = useState([]);
@@ -27,7 +25,6 @@ export default function ProductGallary() {
   //function to fetch our data
   const fetchData = async (dataType:string) => {
 
-    dataType="products";
     setLoading(true)
     try{
       const response = await fetch(`${JSON_URL}/${dataType}`, {
@@ -41,7 +38,7 @@ export default function ProductGallary() {
       if (response.ok){
 
       const data = await response.json()
-      setItems(data["products"])
+      setItems(data["users"])
       setLoading(false)
 
       } else {console.log( response + "Query failed!")}
@@ -55,7 +52,7 @@ export default function ProductGallary() {
 
 //On first render call fetch our data
 useEffect(()=>{
-  fetchData("products");
+  fetchData("users");
 }, []);
  
 
@@ -69,7 +66,7 @@ if(loading){
         items.map(
           item=>{
             return(
-            <li key={item.id} className="section-item ">
+            <li key={item.id} className="user-section-item ">
               <Item {...item}>
               </Item>
             </li>

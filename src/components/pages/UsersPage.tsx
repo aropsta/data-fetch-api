@@ -1,8 +1,6 @@
 import Item from "../ProductItem"
 import "../../styles/home.scss"
-import React, { FormEvent, RefObject, useEffect, useRef, useState, useCallback } from "react";
-import breakPointObserver from "../../breakPointObserver";
-import { captureRejectionSymbol } from "events";
+import { Outlet } from "react-router";
 
 // const breakPoints = { small: "(max-width:880px)", desktop: "(min-width:880px)", };
 
@@ -14,6 +12,10 @@ export default function Users(){
   //useEffect(() => { breakPointObserver(breakPoints, isBreakPoint); }, [breakPoint]);
 
 
-return (<main>USERS
-</main>)
+return(
+   <main className="user-main"> 
+      <h1>Users</h1>
+      <Outlet></Outlet>
+      </main>
+  )
 }

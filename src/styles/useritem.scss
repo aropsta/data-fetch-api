@@ -1,0 +1,93 @@
+@use "./standard";
+@use './variables.scss' as *;
+
+.user-main{
+    padding: 1rem 10rem;
+}
+.user-item{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    text-decoration: none;
+    color: $neutral-01;
+    font-weight: bold;
+    img{
+        width: 20rem;
+        height: 20rem;
+    }
+    svg{
+    }
+
+}
+
+p{
+font-size: $p-mobile;
+}
+.user-section-item{
+    background-color: $white;
+    border-radius: $border-radius;
+    padding: 0.8rem 2.5rem 2rem 2.5rem;
+    
+}
+
+.user-details{
+    display: flex;
+    flex-direction: row;
+    background-color: $white;
+    padding: 2rem 5rem;
+    justify-content: space-around;
+    gap: 1rem;
+
+    width: 80%;
+@media screen and (max-width: $mobile-breakpoint) {
+flex-direction: column;
+padding: 1rem 2rem;
+gap: 2rem;
+.name{
+}
+}
+    .user{
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 2rem;
+p{
+    font-size: 1.5rem;
+    
+}
+svg{
+    width: 10rem;
+    height: 10rem;
+}
+    }
+}
+
+.personal{
+    display: flex;
+    flex-direction: column;
+justify-content: space-between;
+width: auto;
+.name{
+    :first-child{
+        margin-bottom: 1rem;
+        font-weight: 600;
+        font-size: 2rem;
+
+@media screen and (max-width: $mobile-breakpoint) {
+    margin-bottom: 1.5rem;
+}
+    }
+    :nth-child(2){
+        margin-bottom: 0.2rem;
+        font-weight: 500;
+        font-size: 1.2rem;
+@media screen and (max-width: $mobile-breakpoint) {
+    margin-bottom: 1rem;
+}
+    }
+}
+.address{
+    margin: 1rem 0;
+}
+}

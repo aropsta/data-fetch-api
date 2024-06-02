@@ -1,5 +1,5 @@
 
-import { Product, jsonProducts } from '../interaces/Products'
+import { Product, jsonProducts } from '../interaces/Product'
 import Item from "./ProductItem";
 import "../styles/productPage.scss"
 import React, { FormEvent, RefObject, useEffect, useRef, useState, useCallback } from "react";

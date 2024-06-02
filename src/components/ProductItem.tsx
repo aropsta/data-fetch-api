@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
 import "../styles/productItem.scss"
-import { Product, jsonProducts } from '../interaces/Products'
+import { Product, jsonProducts } from '../interaces/Product'
 
 export default function Item(props:Product) {
 const viewDetails = () =>{

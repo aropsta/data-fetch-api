@@ -7,8 +7,10 @@ import ProductPage from './components/pages/ProductsPage';
 import ToDosPage from './components/pages/ToDosPage';
 import UsersPage from './components/pages/UsersPage';
 import ProductDetailsPage from './components/ProductDetails';
+import UserDetailsPage from './components/UserDetails';
 import ErrorPage from './components/pages/ErrorPage';
 import ProductList from './components/ProductList';
+import UserList from './components/UserList';
 
 
 
@@ -26,7 +28,12 @@ function App() {
       </Route>
 
       <Route path="/to-dos" element={<ToDosPage/>} />
-      <Route path="/users" element={<UsersPage/>} />
+      <Route path="/users" element={<UsersPage/>} >
+
+        <Route index element={<UserList/>} />
+        <Route path="description/:id" element={<UserDetailsPage/>}/>
+
+      </Route>
       <Route path="/*" element={<ErrorPage/>} />
 
         

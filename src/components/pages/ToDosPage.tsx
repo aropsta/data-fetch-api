@@ -1,4 +1,4 @@
-import "../../styles/home.scss"
+import "../../styles/todo.scss"
 import { useEffect, useState } from "react";
 import ToDoItem from "../../interaces/Todo";
 import "../../styles/todo.scss"
@@ -60,6 +60,8 @@ if(loading){
   return <main tabIndex={1}><p className='loading'>LOADING</p></main>}
 
     return(
+      <main>
+      <h1>To dos</h1>
       <ul className="todo-gallary">
       {
         items.map(
@@ -75,6 +77,7 @@ if(loading){
         )
       }
       </ul>
+      </main>
     )
 
 }
