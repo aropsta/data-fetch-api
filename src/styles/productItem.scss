@@ -1,5 +1,6 @@
 @use "./standard";
 @use './variables.scss' as *;
+
 .title{
     display: flex;
     flex-direction: column;
@@ -8,6 +9,138 @@ padding: 1rem;
  &:hover{
     outline: 3px solid $black;
  }
+}
+.loading{
+    font-weight: bold;
+    color: $white;
+    font-size: 2rem;
+}
+
+.description{
+    width: 100%;
+    background-color: white;
+    h3{
+        color: $white;
+        background-color: black;
+        padding: 0.5rem 1rem;
+    }
+    p{
+        padding: 0.5rem 1rem;
+    }
+}
+
+.review{
+
+    width: 100%;
+    background-color: white;
+    h3{
+        color: $white;
+        background-color: black;
+        padding: 0.5rem 1rem;
+    }
+    p{
+        padding: 0.5rem 1rem;
+    }
+}
+
+.white-box {
+
+            font-weight: 700;
+            display: flex;
+            color: black;
+            padding: 0.4rem 0.7rem;
+            border-radius: 0.2rem;
+            background-color: $white;
+min-width: max-content;
+}
+.section-price{
+
+    :nth-child(1){
+        margin-bottom: 1rem;
+    }
+    :nth-child(2){
+        font-size: $h2-desktop;
+        border-radius: $border-radius $border-radius 0rem 0rem;
+    }
+    :nth-child(3){
+        border-radius: 0rem 0rem $border-radius $border-radius;
+    text-decoration: line-through;
+    font-size: 1rem;
+    font-weight: 600;
+    }
+}
+
+    .rating-section{
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+    padding-inline: 1rem;
+
+    :last-child{
+        margin-left: auto;
+    }
+
+}
+    
+.item-detail{
+    display: flex;
+    flex-direction: row;
+    border-radius: 0.25rem;
+    padding: 1rem;
+    gap: 1rem;
+    width: max(20rem,100%);
+
+@media screen and (max-width: $mobile-breakpoint) {
+    flex-direction: column;
+    .section-price{
+        width: fit-content;
+    }
+}
+    
+    
+
+h2{
+    font-size: $h2-desktop;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+.img-section{
+    display: flex;
+}
+
+    .title{
+
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .figure{
+        position: relative;
+        width: 100%;
+
+        &:hover{
+        }
+        img{
+        min-height: 20rem;
+        min-width: 100%;
+        background-color: $neutral-02;
+        }
+        .fig-cap{
+
+            margin: 1rem;
+            position: absolute;
+            font-weight: bold;
+            font-size: $h4-desktop;
+            display: flex;
+            color: black;
+            padding: 0.9rem 1.2rem;
+            border-radius: 0.2rem;
+            background-color: $white;
+            bottom: 2rem;
+            right: 2rem;
+
+
+        }
+    }
 }
 .item{
     display: flex;

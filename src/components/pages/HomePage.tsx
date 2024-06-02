@@ -1,19 +1,48 @@
-import Item from "../ProductItem"
 import "../../styles/home.scss"
 import React, { FormEvent, RefObject, useEffect, useRef, useState, useCallback } from "react";
-import breakPointObserver from "../../breakPointObserver";
 import { captureRejectionSymbol } from "events";
 
-// const breakPoints = { small: "(max-width:880px)", desktop: "(min-width:880px)", };
+function getRandomInt(max:number) {
+  return Math.floor(Math.random() * max);
+}
 
+const links = [
+  {
+    name: "PRODUCT",
+    href: "/product-description"
+  },
+
+  {
+    name: "User",
+    href: "/user-description"
+
+  },
+  {
+    name: "To do",
+    href: "/todo-description"
+
+  }
+]
 
 export default function Home(){
-  //  const [breakPoint, isBreakPoint] = useState();
-
-  //dynamically set variables that change css for mobile/desktop/laptop
-  //useEffect(() => { breakPointObserver(breakPoints, isBreakPoint); }, [breakPoint]);
 
 
-return (<main>HOME
+return (<main className="main-home">
+  <h1>Go to Random: </h1>
+
+  <section className="home-section">
+
+      {
+        links.map(
+          link=>{
+            return(
+            <a href={link.href} className="links">
+            {link.name}
+            </a>
+            )
+          }
+        )
+      }
+  </section>
 </main>)
 }
