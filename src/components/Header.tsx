@@ -27,7 +27,7 @@ const MenuItems = [
   },
   {
     title: "To Dos",
-    url: "/todos",
+    url: "/to-dos",
     cName: "nav-links",
   },
 ]

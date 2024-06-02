@@ -1,0 +1,29 @@
+@use "./standard";
+@use './variables.scss' as *;
+
+main{
+display: flex;
+background-color: $background-colour;
+padding: 2rem 15rem;
+align-items: center;
+flex-direction: column;
+}
+h1{
+    color: $white;
+    background-color: $black;
+    width: max-content;
+    padding: 0.5rem 0.9rem;
+}
+.item-gallary{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    flex-basis: 1;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 0rem;
+}
+.disable-scroll {
+  overflow-y: hidden;
+  height: 100vh;
+}

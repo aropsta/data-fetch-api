@@ -1,0 +1,86 @@
+@use "./standard";
+@use './variables.scss' as *;
+.title{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+padding: 1rem;
+ &:hover{
+    outline: 3px solid $black;
+ }
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    background-color: $product-backgroud;
+
+    width: 15rem;
+    height: fit-content;
+    h3{
+    }
+
+    >*{
+    }
+    li{
+        margin: 0;
+        padding: 0;
+    }
+    .title{
+
+        cursor: pointer;
+        text-decoration: none;
+    &:hover{
+
+    }
+    &:visited{
+        color: black;
+    }
+    }
+    .figure{
+
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+        &:hover{
+        }
+        img{
+        width: 100%;
+        min-height: 5rem;
+        background-color: $neutral-02;
+        }
+        .fig-cap{
+
+            margin: 1rem;
+            position: absolute;
+            font-weight: bold;
+            display: flex;
+            color: black;
+            padding: 0.3rem 0.4rem;
+            border-radius: 0.2rem;
+            background-color: white;
+
+
+        }
+    }
+    .desc{
+
+    }
+    .price{
+
+    }
+
+    .rating{
+
+    text-align: end;
+    font-weight: bold;
+    }
+    .discount{
+
+    }
+    
+
+
+}
