@@ -10,33 +10,43 @@ import { Link } from 'react-router-dom';
 export default function ProductDescriptionPage() {
   
 
+  //parameter passed in from gallary page. To make request for single item
   const index = useParams().id;
+
   const ITEM_URL = `products/${index}`
   const JSON_URL= "https://dummyjson.com";
 
   
+  const [error, setError] = useState([]);
+
+  //Is still loading?
   const [loading, setLoading] = useState(true);
+
+  //Array of JSON items. Typed from an interface
   const [item, setItem] = useState<Product>({}as Product);
 
-
-
-
-   const fetchData = async () => {
-
+  const fetchData = async () => {
      setLoading(true)
-       const response = await fetch(`${JSON_URL}/${ITEM_URL}`, {
+     try{
+const response = await fetch(`${JSON_URL}/${ITEM_URL}`, {
          method: 'GET',
          headers: {
            "Content-Type": "application/json"
          }
        })
-       const json = await response.json();
-       const data = json;
+       //error handling
        if (response.ok){
- setItem(data)
- console.log(item)
- setLoading(false)
-       } 
+       const data = await response.json();
+    setItem(data)
+    setLoading(false)
+       }  else {console.log(response + " Query failed!")}
+     }catch(e:any){
+
+
+      setError(e);
+      console.log(error)
+     }
+       
    }
 
  useEffect(()=>{
@@ -65,8 +75,8 @@ if(loading){
 </section>
   <section className='rating-section'>
     {
-    item.tags.map(tag=>{
-      return <p className='tag white-box'>{tag}</p>
+    item.tags.map((tag, index)=>{
+      return <p key={index} className='tag white-box'>{tag}</p>
     })
     }
   <p className='white-box' aria-label={ Math.round(item.rating) + " stars"}>{"* ".repeat(Math.round(item.rating))+" stars"} </p>

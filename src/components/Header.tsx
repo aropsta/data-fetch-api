@@ -92,7 +92,9 @@ const [click, setClick] = useState(false);
           </NavLink>
         </li>
         <li onClick={closeMobileMenu} className="nav-item">
-          <NavLink to={MenuItems[3].url} className={MenuItems[3].cName}>
+          <NavLink to={MenuItems[3].url} className={({ isActive }) => {
+              return isActive ? `${MenuItems[3].cName} active-link` : `${MenuItems[2].cName}`;
+            }}>
             {MenuItems[3].title}
           </NavLink>
         </li>

@@ -17,11 +17,14 @@ function App() {
     <>
     <Header></Header>
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/products" element={<ProductPage/>} >
-<Route index element={<ProductList/>} />
-      <Route path="description/:id" element={<ProductDetailsPage/>}/>
+      <Route path="/" element={<Home />} >
       </Route>
+
+      <Route path="/products" element={<ProductPage/>} >
+        <Route index element={<ProductList/>} />
+        <Route path="description/:id" element={<ProductDetailsPage/>}/>
+      </Route>
+
       <Route path="/to-dos" element={<ToDosPage/>} />
       <Route path="/users" element={<UsersPage/>} />
       <Route path="/*" element={<ErrorPage/>} />

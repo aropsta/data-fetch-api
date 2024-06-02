@@ -1,0 +1,19 @@
+@use "../styles/standard.scss";
+@use "../styles/variables.scss" as *;
+
+
+.todo-gallary{
+
+display: flex;
+flex-direction: column;
+padding: 3rem 2rem;
+
+li{
+    list-style:none;
+    color: $primary;
+    font-size: 1.5rem;
+}
+.strike{
+    text-decoration: line-through;
+}
+}

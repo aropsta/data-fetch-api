@@ -1,44 +1,39 @@
 import "../../styles/home.scss"
-import React, { FormEvent, RefObject, useEffect, useRef, useState, useCallback } from "react";
-import { captureRejectionSymbol } from "events";
-
-function getRandomInt(max:number) {
-  return Math.floor(Math.random() * max);
-}
+import { BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
 
 const links = [
   {
-    name: "PRODUCT",
-    href: "/product-description"
-  },
-
-  {
-    name: "User",
-    href: "/user-description"
-
+    title: "Products",
+    url: "/products",
+    cName: "nav-links",
   },
   {
-    name: "To do",
-    href: "/todo-description"
-
-  }
+    title: "Users",
+    url: "/users",
+    cName: "nav-links",
+  },
+  {
+    title: "To Dos",
+    url: "/to-dos",
+    cName: "nav-links",
+  },
 ]
+
 
 export default function Home(){
 
-
 return (<main className="main-home">
-  <h1>Go to Random: </h1>
+  <h1>Select your data: </h1>
 
   <section className="home-section">
 
       {
         links.map(
-          link=>{
+          (link, index)=>{
             return(
-            <a href={link.href} className="links">
-            {link.name}
-            </a>
+            <Link key={index} to={link.url} className="links">
+            {link.title}
+            </Link>
             )
           }
         )

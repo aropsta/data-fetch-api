@@ -7,7 +7,7 @@ import { Outlet } from "react-router";
 import { useParams } from 'react-router';
 
 
-export default function ProductGallaryu() {
+export default function ProductGallary() {
 
   //const [dataType, setDataType]= useState("products")
 
@@ -44,7 +44,7 @@ export default function ProductGallaryu() {
       setItems(data["products"])
       setLoading(false)
 
-      } else {console.log( response + "Query failed")}
+      } else {console.log( response + "Query failed!")}
 
     } catch(e:any){
       setError(e);

@@ -1,19 +1,80 @@
-import Item from "../ProductItem"
 import "../../styles/home.scss"
-import React, { FormEvent, RefObject, useEffect, useRef, useState, useCallback } from "react";
-import breakPointObserver from "../../breakPointObserver";
-import { captureRejectionSymbol } from "events";
-
+import { useEffect, useState } from "react";
+import ToDoItem from "../../interaces/Todo";
+import "../../styles/todo.scss"
 // const breakPoints = { small: "(max-width:880px)", desktop: "(min-width:880px)", };
 
 
 export default function Todos(){
-  //  const [breakPoint, isBreakPoint] = useState();
+//const [dataType, setDataType]= useState("products")
 
-  //dynamically set variables that change css for mobile/desktop/laptop
-  //useEffect(() => { breakPointObserver(breakPoints, isBreakPoint); }, [breakPoint]);
+  //JSON Item and setter function
+  const [items, setItems] = useState<ToDoItem[]>([] as ToDoItem[]);
+  
+  //
+  const [error, setError] = useState([]);
+
+  //boolean for if data has been received
+  const [loading, setLoading] = useState(true);
+
+  const JSON_URL= "https://dummyjson.com";
 
 
-return (<main>TO DO's
-</main>)
+
+  //function to fetch our data
+  const fetchData = async (dataType:string) => {
+
+    setLoading(true)
+    try{
+      const response = await fetch(`${JSON_URL}/${dataType}`, {
+        method: 'GET',
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+
+      //catching any problems with receiving data
+      if (response.ok){
+
+      const data = await response.json()
+      setItems(data["todos"])
+      setLoading(false)
+
+      } else {console.log( response + "Query failed")}
+
+    } catch(e:any){
+      setError(e);
+      console.log(error)
+
+    }
+  }
+
+//On first render call fetch our data
+useEffect(()=>{
+  fetchData("todos");
+}, []);
+ 
+
+//Checking if data has loaded yet. Then render items or a load screen conditionally 
+if(loading){
+  return <main tabIndex={1}><p className='loading'>LOADING</p></main>}
+
+    return(
+      <ul className="todo-gallary">
+      {
+        items.map(
+          item=>{
+            return(
+            <li key={item.id} className={`todo-item ${item.completed? "strike" : ""}`}> - {item.todo}
+
+            <br />
+            <br />
+            </li>
+            )
+          }
+        )
+      }
+      </ul>
+    )
+
 }
