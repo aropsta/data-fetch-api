@@ -4,10 +4,11 @@
 .title{
     display: flex;
     flex-direction: column;
+        font-weight: 500;
     gap: 0.5rem;
 padding: 1rem;
  &:hover{
-    outline: 3px solid $black;
+    outline: 3px solid aqua;
  }
 }
 .loading{
@@ -16,6 +17,9 @@ padding: 1rem;
     font-size: 2rem;
 }
 
+h2{
+    color: $white;
+}
 .description{
     width: 100%;
     background-color: white;
@@ -203,6 +207,7 @@ h2{
     }
     .price{
 
+        font-weight: bold;
     }
 
     .rating{
@@ -212,6 +217,10 @@ h2{
     }
     .discount{
 
+        font-size: 1rem;
+        margin-top: -0.4rem;
+        font-weight: 600;
+        color: $neutral-02;
     }
     
 

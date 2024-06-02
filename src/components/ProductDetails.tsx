@@ -69,8 +69,8 @@ if(loading){
 <section className='section-price'>
 
 <p className='brand white-box'>{item.brand? item.brand: "Unbranded"}</p>
-  <p className='price white-box'>{item.price}</p>
-  <p className='discount white-box'>MSRP: {Math.round(item.price/(1-(item.discountPercentage/100)))}</p>
+  <p className='price white-box'>${item.price}</p>
+  <p className='discount white-box'>MSRP: ${Math.round(item.price/(1-(item.discountPercentage/100)))}</p>
 </section>
 </section>
   <section className='rating-section'>

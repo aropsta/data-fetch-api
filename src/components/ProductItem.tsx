@@ -17,8 +17,8 @@ const viewDetails = () =>{
   <figcaption className="fig-cap" aria-label='discount'>{-Math.round(props.discountPercentage)}% </figcaption>
 </figure>
   <p className='rating' aria-label={ Math.round(props.rating) + " stars"}>{"* ".repeat(Math.round(props.rating))} </p>
-  <p className='price'>{props.price}</p>
-  <p className='discount'>MSRP: {Math.round(props.price/(1-(props.discountPercentage/100)))}</p>
+  <p className='price'>${props.price}</p>
+  <p className='discount'>MSRP: ${Math.round(props.price/(1-(props.discountPercentage/100)))}</p>
 </Link>
   </section>
   )

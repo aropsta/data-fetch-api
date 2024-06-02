@@ -12,6 +12,10 @@
     text-decoration: none;
     color: $neutral-01;
     font-weight: bold;
+    padding: 0.8rem 2.5rem 2rem 2.5rem;
+ &:hover{
+    outline: 3px solid aqua;
+ }
     img{
         width: 20rem;
         height: 20rem;
@@ -27,7 +31,6 @@ font-size: $p-mobile;
 .user-section-item{
     background-color: $white;
     border-radius: $border-radius;
-    padding: 0.8rem 2.5rem 2rem 2.5rem;
     
 }
 
@@ -35,8 +38,8 @@ font-size: $p-mobile;
     display: flex;
     flex-direction: row;
     background-color: $white;
-    padding: 2rem 5rem;
-    justify-content: space-around;
+    padding: 2rem 4rem;
+    justify-content: space-between;
     gap: 1rem;
 
     width: 80%;
