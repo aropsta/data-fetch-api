@@ -54,7 +54,7 @@ const response = await fetch(`${JSON_URL}/${ITEM_URL}`, {
  }, []);
 
 if(loading){
-  return <main tabIndex={1}>LOADING</main>}
+  return <main className='main-loading'><p className='loading'>LOADING</p></main>}
 
     return(
   <>

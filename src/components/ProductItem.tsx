@@ -9,7 +9,7 @@ const viewDetails = () =>{
 
   return (
   <section className='item' >
-  <Link to={"description/" + props.id} id='title' className='title' tabIndex={props.id}> 
+  <Link to={"description/" + props.id} id='title' className='title' > 
   {props.title}
 <figure className='figure'>
   <img src="data:,"

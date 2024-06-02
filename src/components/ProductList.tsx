@@ -61,7 +61,7 @@ useEffect(()=>{
 
 //Checking if data has loaded yet. Then render items or a load screen conditionally 
 if(loading){
-  return <main tabIndex={1}><p className='loading'>LOADING</p></main>}
+  return <main className='main-loading'><p className='loading'>LOADING</p></main>}
 
     return(
       <ul className="item-gallary">

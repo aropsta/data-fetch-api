@@ -54,8 +54,7 @@ const response = await fetch(`${JSON_URL}/${ITEM_URL}`, {
  }, []);
 
 if(loading){
-  return <main tabIndex={1}>LOADING</main>}
-
+  return <main className="main-loading" ><p className='loading'>LOADING</p></main>}
     return(
   <>
   <section className='user-details'>
@@ -68,7 +67,7 @@ if(loading){
     </section>
     <section className='personal'>
       <section className='name'>
-<p>{item.firstName+" " + item.lastName +" , " + item.age }</p>
+<h2>{item.firstName+" " + item.lastName +" , " + item.age }</h2>
 <p>{item.company.title + " at " + item.company.name}</p>
 <p>{item.email}</p>
       </section>
