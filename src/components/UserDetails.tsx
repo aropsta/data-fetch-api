@@ -67,7 +67,7 @@ if(loading){
     </section>
     <section className='personal'>
       <section className='name'>
-<h2 id="1">{item.firstName+" " + item.lastName +" , " + item.age }</h2>
+<h2 id="1">{item.firstName+" " + item.lastName +" ," + item.age }</h2>
 <p>{item.company.title + " at " + item.company.name}</p>
 <p>{item.email}</p>
       </section>

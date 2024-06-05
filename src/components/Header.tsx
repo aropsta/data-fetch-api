@@ -2,12 +2,7 @@ import { BrowserRouter as Router, Route, Link, NavLink } from "react-router-dom"
 import "../styles/header.scss";
 
 import React, { FormEvent, RefObject, useEffect, useRef, useState, useCallback } from "react";
-import breakPointObserver from "../breakPointObserver";
 
-const breakPoints = {
-  small: "(max-width:880px)",
-  desktop: "(min-width:880px)",
-};
 
 const MenuItems = [
   {
@@ -34,13 +29,8 @@ const MenuItems = [
 export default function Header() {
 
 
-const [breakPoint, isBreakPoint] = useState();
  //const [headerHidden, changeHeaderVisibility] = useState(false); 
 const [click, setClick] = useState(false);
-  useEffect(() => {
-    breakPointObserver(breakPoints, isBreakPoint);
-  }, [breakPoint]);
-
   const toggleScroll = (a: boolean) => {
     if (a) {
       document.body.classList.add("disable-scroll");

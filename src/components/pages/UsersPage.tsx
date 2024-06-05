@@ -2,8 +2,6 @@ import Item from "../ProductItem"
 import "../../styles/home.scss"
 import { Outlet } from "react-router";
 
-// const breakPoints = { small: "(max-width:880px)", desktop: "(min-width:880px)", };
-
 
 export default function Users(){
   //  const [breakPoint, isBreakPoint] = useState();

@@ -2,7 +2,6 @@ import "../../styles/todo.scss"
 import { useEffect, useState } from "react";
 import ToDoItem from "../../interaces/Todo";
 import "../../styles/todo.scss"
-// const breakPoints = { small: "(max-width:880px)", desktop: "(min-width:880px)", };
 
 
 export default function Todos(){
